@@ -1,0 +1,67 @@
+■cell manipulate 
+
+□Set a value
+
+  Range("A1:A4,B1:B5").Value = "Hello"               
+  Cells("1,1").Value = 123
+  Range(Cells(1, 1), Cells(4, 2)).Value = 13
+  
+  Worksheets("工作表1").Range("A1").Value = "工作表1的A1"
+  Worksheets("工作表2").Range("A1").Value = "工作表2的A1"
+  
+  Worksheets(1).Range("A1").Value = "工作表1的A1"
+  Worksheets(2).Range("A1").Value = "工作表2的A1"
+  
+  Workbooks("活頁簿1").Worksheets(1).Range("A1").Value = "Hello"
+  Workbooks(1).Worksheets(1).Range("A1").Value = "Hello"
+  
+□Select Cells
+
+  Range(Cells(1, 1), Cells(4, 2)).Select    #select cell
+  Rows(3).Select           #select row
+  Columns(2).Select        #select column
+  
+□Copy and paste
+
+  Range("A1:A2").Select
+  Selection.Copy
+  Range("C3").Select
+  ActiveSheet.Paste
+
+□Delete data
+
+  Range("A1:A2").ClearContents
+  Range("A1").Value = ""
+  
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————  
+■Table manipulate
+
+□Add a table,Name a table,Count number of tables
+ 
+  Worksheets.Add
+  Worksheets(1).Name = "新的工作表"
+  MsgBox Worksheets.Count
+  
+
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————
+■Workbook manipulate
+
+□Count number of tables,Get name of workbook
+
+  MsgBox Workbooks.Count
+  MsgBox Workbooks(1).Name
+  
+□Open,save,saveas,active,close workbook
+
+  Workbooks.Open "C:\VBA\demo.xlsx"
+  Workbooks("demo").Save
+  Workbooks("demo").SaveAs "C:\VBA\another.xlsx"
+  Workbooks("demo").Activate
+  Workbooks("demo").Close
+  Workbooks.Close
+  Application.Quit
+
+
+
+
+
