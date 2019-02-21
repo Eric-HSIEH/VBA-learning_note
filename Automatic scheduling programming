@@ -1,0 +1,22 @@
+Option Explicit
+必須明確宣告所有變數，若使用未宣告的變數，編譯階段將產生錯誤。
+
+Public Type Taxi
+宣告Taxi資料類別
+
+
+Application.DisplayAlerts = False
+Excel執行時不要更新畫面
+
+Worksheets("Order").AutoFilterMode = False
+不要顯示自動篩選下拉式箭頭
+
+ReDim arrOrder(OrderCount)
+重新配置陣列變數的儲存空間
+
+TimeAdd(arrOrder(i).StartTime, (arrOrder(i).TravelSeconds / 60) + BoardingTime)
+時間加總(arrOrder(i).StartTime  +  (arrOrder(i).TravelSeconds / 60) + BoardingTime))
+
+Debug.Print
+輸出除錯用的訊息，顯示在即時運算視窗，可一次看很多資料
+
