@@ -1,0 +1,119 @@
+■Declare string(String)
+
+  Dim text1, text2 As String
+  text1 = String(6, "A") ' 輸出 AAAAAA
+  text2 = String(3, 100) ' 輸出 ddd(用 ASCII 的編碼)
+  
+■Connect string(&)
+
+  Dim text1 As String,text2 As String
+  text1 = "Hello"
+  text2 = "World"
+  MsgBox text1 & " " & text2    '輸出Hello World
+  
+■String length(Len)
+
+ Dim text As String
+  text = "Hello World"
+
+ Dim textLen As Integer
+  textLen = Len(text)
+
+  MsgBox "textLen = " & textLen   '輸出textLen = 11
+  
+■String search(InStr)
+
+ □search from head(InStr)
+
+  Dim pos As integer
+  pos = InStr(1,"Hello world","world", vbTextCompare)  'first parameter is where we begin searching;
+                                                        second parameter is where we want to search;
+                                                        third parameter is what we want to know its site;
+                                                        fourth parameter is set not case-sensitive
+  MsgBox"pos = " & pos    '輸出7
+  
+ □search from tail(InStrRev)
+
+  Dim pos As Integer
+  pos = InStrRev("Hello, World", "e")
+  MsgBox "pos = " & pos   '輸出11
+  
+  
+■Get substring(Left,Right,Mid)
+
+  MsgBox Left("Hello, world.", 5)           '輸出Hello
+  MsgBox Right("Hello, world.", 6)          '輸出world.
+  MsgBox Mid("This is a message.", 6, 2)    '輸出is
+  MsgBox Mid("This is a message.", 6)       '輸出is a message
+  
+■Trim redundant blank(LTrim,RTrim,Trim)  and generate blank(Space)
+
+ □trim head blank(Ltrim)
+
+  Dim mystr As String
+  mystr = "         Hello, world."
+  MsgBox "After LTrim : " & LTrim(mystr)    '輸出After LTrim : Hello, world.
+  
+  □trim tail blank(Rtrim)
+  
+    Dim mystr As String
+    mystr = "Hello, world.              "
+    MsgBox "After RTrim : " & RTrim(mystr)   '輸出After RTrim : Hello, world.
+    
+  □trim head and tail blank(Trim)
+   
+    Dim mystr As String
+    mystr = "       Hello, world.        "
+    MsgBox "After Trim : " & Trim(mystr)     '輸出After Trim : Hello, world.
+    
+  □generate blank
+  
+    MsgBox ("Hello," & Space(10) & "world.")  '輸出Hello,          world.
+ 
+■Replace string(is case sensitive)
+ 
+  □replace specific site string(Replace)
+  
+    Dim mystr As String
+    mystr = "This is a message."
+    newstr = Replace(mystr, "message", "dog")
+    MsgBox "After Replace : " & newstr        '輸出After Replace : This is a dog.
+    
+  □replace specific site string：repeat appear(Replace)
+  
+    Dim mystr As String
+    mystr = "This is a message."
+    newstr = Replace(mystr, "is", "**")
+    MsgBox "After Replace : " & newstr         '輸出After Replace : Th** ** a message.
+
+  □replace specific site and count string(Replace)
+  
+    Dim mystr As String
+    mystr = "This is a message." 
+    newstr = Replace(mystr, "is", "**", 1, 1)   'the first "1" is site we want to replace; the second "1" is count we want to replace
+    MsgBox "After Replace : " & newstr          '輸出After Replace : Th** is a message.
+    
+    Dim mystr As String
+    mystr = "This is a message."
+    newstr = Replace(mystr, "is", "**", 5, 1)    'If replacing site is too behind, the front of the string will be trim.
+    MsgBox "After Replace : " & newstr           '輸出After Replace : ** a message.
+    
+ ■Compare string(StrComp)
+  
+    If sting1 < string2 ,then output is -1
+    If sting1 = string2 ,then output is 0
+    If sting1 > string2 ,then output is 1
+  
+    MsgBox StrComp("Hello", "Hello")                  ' 輸出為 0
+    MsgBox StrComp("Hello", "HELLO")                  ' 輸出為 1
+    MsgBox StrComp("Hello", "hello")                  ' 輸出為 -1
+    MsgBox StrComp("Hello", "hello", vbTextCompare)   ' 輸出為 0
+    
+ ■Reverse string(StrReverse)
+   
+    MsgBox StrReverse("Hello, world.")      ' 輸出.dlrow ,olleH
+     
+ ■Reverse upper or lower(UCase;LCase)
+  
+    MsgBox UCase("Hello, world.") ' 輸出HELLO, WORLD.    
+    MsgBox LCase("Hello, world.") ' 輸出hello, world.   
