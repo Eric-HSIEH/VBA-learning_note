@@ -1,0 +1,48 @@
+■declare variances
+
+□general variances
+
+  Dim x As Integer
+  x = 5
+  MsgBox "value is " & x
+  
+□multifunction variances(inefficient)
+
+  Dim x As Variant
+  x = "G.T.Wang"
+  MsgBox "My name is " & x
+  x = 123
+  MsgBox "The value is " & x
+  
+  Dim x As Variant
+  Dim x ' default is   Variant
+  
+★If variances are declared in Sub,then they belong to local variances.
+
+□public variances(can be used by any modules)
+
+  Public MyVar As Integer
+
+  Sub Hello1()
+   MyVar = 12
+    MsgBox MyVar
+  End Sub
+  
+■declare constant
+
+  Const myDate As Date = #2/2/2020#
+  Const myDay As String = "Sunday"
+  
+■Operator
+
+□string operator
+
+  Dim text1 As String, text2 As String
+  text1 = "Hi"
+  text2 = "G. T. Wang"
+  MsgBox text1 & " " & text2
+  
+□comparison operators
+
+  <>  'not equal to
+  
