@@ -1,0 +1,93 @@
+■If then & Else
+
+□If then
+
+  Dim rainProb As Double
+  rainProb = 0.3 ' 降雨機率
+  
+  If rainProb > 0.6  Then
+   MsgBox "帶雨傘出門"
+  Else
+   MsgBox "不用帶雨傘出門"
+  End If
+  
+□If then and else
+  
+  Dim rainProb As Double
+  rainProb = 0.3 ' 降雨機率
+  
+  If rainProb > 0.7 Then
+    MsgBox "帶雨傘出門"
+  ElseIf rainProb > 0.3 Then
+    MsgBox "丟銅板決定要不要帶雨傘"
+  Else
+    MsgBox "不用帶雨傘出門"
+  End If
+
+■Select case
+
+  Dim x As Integer
+  x = 7
+  
+  Select Case x
+  Case Is <= 5
+    MsgBox "Case 1"
+  Case 6, 8
+    MsgBox "Case 2"
+  Case 7, 9
+    MsgBox "Case 3"
+  Case 10
+    MsgBox "Case 4"
+  Case Else
+    MsgBox "Case 5"
+  End Select
+  
+■For loop
+
+  Dim i, s As Integer
+  s = 0
+  
+  For i = 1 To 10
+    s = s + i
+    If i >= 4 Then
+      Exit For ' 中斷迴圈
+    End If
+  Next i
+  MsgBox "s = " & s
+  
+■For each(when we want to get every elements in collection)
+
+  Dim wSheet As Worksheet
+  
+  For Each wSheet In Worksheets    'store every elements in Worksheet in wSheet variance
+  MsgBox "找到工作表: " & wSheet.Name
+  Next wSheet
+
+■Do while
+
+□do while loop
+
+  Dim i, s As Integer
+  s = 0
+  i = 1
+  
+  Do While i <= 10
+    s = s + i
+    i = i + 1
+  Loop
+  MsgBox "s = " & s
+  
+□do until loop(in contrast to do while)
+
+  Dim i, s As Integer
+  s = 0
+  i = 1
+  
+  Do Until i > 10
+    s = s + i
+    i = i + 1
+    If i > 4 Then
+      Exit Do ' 中斷迴圈
+    End If
+  Loop
+  MsgBox "s = " & s
