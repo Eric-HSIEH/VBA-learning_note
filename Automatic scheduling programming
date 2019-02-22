@@ -4,7 +4,6 @@ Option Explicit
 Public Type Taxi
 宣告Taxi資料類別
 
-
 Application.DisplayAlerts = False
 Excel執行時不要更新畫面
 
